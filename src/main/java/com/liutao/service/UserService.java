@@ -36,7 +36,7 @@ public class UserService {
         return userMapper.listUser();
     }
 
-    @CanUpdate(value = CacheValue.MON)
+    @CanUpdate(value = CacheValue.VALUE)
     public int update(User user) {
         return userMapper.update(user);
     }

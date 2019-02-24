@@ -1,7 +1,7 @@
 package com.liutao.common;
 
 public enum CacheValue {
-    MON("1");
+    VALUE("1");
 
     private String value;
 
@@ -13,7 +13,11 @@ public enum CacheValue {
         return value;
     }
 
-    public boolean isRest() {
-        return false;
+    /**
+     * 动态设置参数
+     * @param value
+     */
+    public void setValue(String value) {
+        this.value = value;
     }
 }

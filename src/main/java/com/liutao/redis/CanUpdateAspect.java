@@ -44,7 +44,7 @@ public class CanUpdateAspect {
                 Signature signature = proceedingJoinPoint.getSignature();//此处joinPoint的实现类是MethodInvocationProceedingJoinPoint
                 MethodSignature methodSignature = (MethodSignature) signature;//获取参数名
                 CanUpdate canUpdate = methodSignature.getMethod().getAnnotation(CanUpdate.class);
-                int oldValue = Integer.parseInt(canUpdate.getValue());
+                int oldValue = Integer.parseInt(canUpdate.value().getValue());
                 System.out.println(oldValue);
                 //key策略：需要缓存的对象的全类名-id，如：entity.User-1
                 redisService.set(result.getClass().getName(), String.valueOf(oldValue++));

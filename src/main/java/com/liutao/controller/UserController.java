@@ -50,8 +50,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String update(User user) {
-
+    public String update() {
+        CacheValue.VALUE.setValue("20");
+        User user = new User();
         int result = userservice.update(user);
         if (result >= 1) {
             return "修改成功";
